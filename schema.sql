@@ -1,5 +1,5 @@
 
-CREATE TABLE Competicao (
+CREATE TABLE competicao (
     id_competicao INT NOT NULL AUTO_INCREMENT,
     nome_camp VARCHAR(100) NOT NULL,
     ano_realizacao INT NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE atleta (
     status_elenco VARCHAR(50) NOT NULL,
     numero_camisa INT NOT NULL,
     PRIMARY KEY (id_atleta),
-    CONSTRAINT chk_status_elenco CHECK (status_elenco IN ('Titular', 'Reserva')),
+    CONSTRAINT chk_status_elenco CHECK (status_elenco IN ('TITULAR', 'RESERVA')),
     CONSTRAINT chk_posicao CHECK (posicao IN ('GOLEIRO', 'ZAGUEIRO', 'LATERAL', 'MEIO-CAMPO', 'ATACANTE'))
 )
 
