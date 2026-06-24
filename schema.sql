@@ -1,3 +1,8 @@
+CREATE DATABASE IF NOT EXISTS fladesempenho_db
+DEFAULT CHARACTER SET utf8mb4
+DEFAULT COLLATE utf8mb4_unicode_ci;
+
+USE fladesempenho_db
 
 CREATE TABLE competicao (
     id_competicao INT NOT NULL AUTO_INCREMENT,
@@ -39,12 +44,14 @@ CREATE TABLE partidas (
     mando_campo VARCHAR(10) NOT NULL,
     gols_pro INT NOT NULL,
     gols_contra INT NOT NULL,
-    data_hora TIMESTAMP NOT NULL,
+    resultado VARCHAR(10) NOT NULL,
+    data_hora DATETIME NOT NULL,
     c_id_competicao INT NOT NULL,
     a_id_adversario INT NOT NULL,
     t_id_tecnico INT NOT NULL,
     PRIMARY KEY (id_partida),
     CONSTRAINT chk_mando_campo CHECK (mando_campo IN ('Casa', 'Fora'))
+    CONSTRAINT chk_resultado CHECK (resultado IN ('Vitória', 'Empate', 'Derrota'))
     FOREIGN KEY (c_id_competicao) REFERENCES competicao(id_competicao),
     FOREIGN KEY (a_id_adversario) REFERENCES adversario(id_adversario),
     FOREIGN KEY (t_id_tecnico) REFERENCES tecnico(id_tecnico)

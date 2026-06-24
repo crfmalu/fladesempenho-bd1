@@ -38,4 +38,31 @@ VALUES
     (0, 0, 0, 90, 0, 10, 1),
     (0, 0, 0, 90, 0, 11, 1);
 
+START TRANSACTION; 
+
+UPDATE atleta
+SET status_elenco = 'RESERVA'
+WHERE id_atleta IN (1, 2, 4, 6);
+
+INSERT INTO atleta (posicao, nome, status_elenco, numero_camisa)
+VALUES
+    ('ATACANTE', 'BRUNO HENRIQUE', 'RESERVA', 27),
+    ('ATACANTE', 'SAMUEL LINO', 'RESERVA', 16),
+    ('MEIO-CAMPO', 'ARRASCAETA', 'RESERVA', 10),
+    ('MEIO-CAMPO', 'JORGINHO', 'RESERVA', 21);
+
+INSERT INTO participacao (gols_marcados, cartao_am, cartao_verm, minutos, assistencias, id_atleta, id_partida)
+VALUES
+    (0, 0, 0, 28, 0, 12, 1),
+    (0, 0, 0, 28, 0, 13, 1),
+    (0, 0, 0, 34, 0, 14, 1),
+    (0, 0, 1, 34, 0, 15, 1);
+
+COMMIT; 
+
+START TRANSACTION;
+
+DELETE FROM adversario;
+
+ROLLBACK;
 
