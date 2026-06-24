@@ -3,7 +3,7 @@ Projeto Prático de Banco de Dados 1 - CEFET-RJ.
 
 
 ## Modelo Entidade-Relacionamento (Notação de Peter Chen)
-![Modelo Relacional](./-Peter-chen.drawio.svg)
+![Modelo Relacional](./PETER-CHEN.drawio.svg)
 
 ## Modelo Lógico (Diagrama)
 ![Modelo Lógico](./Modelo%20L%C3%B3gico1.drawio.svg)
