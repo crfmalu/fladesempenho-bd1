@@ -7,3 +7,6 @@ Projeto Prático de Banco de Dados 1 - CEFET-RJ.
 
 ## Modelo Lógico (Diagrama)
 ![Modelo Lógico](./Modelo%20L%C3%B3gico-Novo.drawio.svg)
+
+## 1. Modelo Físico Normalizado
+![Modelo Físico do Banco de Dados](./Modelo%20F%C3%ADsico.drawio.svg)
